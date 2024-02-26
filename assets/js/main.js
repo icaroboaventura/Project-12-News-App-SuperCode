@@ -1,6 +1,7 @@
 const searchBtn = document.querySelector(".btn");
 const selectLanguages = document.querySelector(".languages");
 const selectSorts = document.querySelector(".sort-by");
+const articlesSection = document.querySelector(".articles");
 
 const languages = ["English", "Arabic", "German", "Spanish", "French", "Hebrew", "Italian", "Dutch", "Norwegian", "Portuguese", "Russian", "Swedish", "Turkish", "Chinese"];
 
@@ -32,6 +33,20 @@ const fechtData = () => {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+      data.articles.forEach((article) => {
+        console.log(article.title);
+        console.log(article.description);
+        console.log(article.url);
+        console.log(article.urlToImage);
+        articlesSection.innerHTML += `
+        <article>
+        <h2>${article.title}</h2>
+        <p>${article.description}</p>
+        <img src="${article.urlToImage}" alt=${article.title}/>
+        <a href="${article.url}"  target="_blank">Read More</a>
+        </article>
+        `;
+      });
     })
     .catch((err) => {
       "First fetch error", err;
