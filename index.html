@@ -7,20 +7,26 @@
     <title>My News</title>
   </head>
   <body>
-    <header>
-      <h1>My News</h1>
-      <form onsubmit="return false">
-        <input type="text" name="search-news" class="search-news" />
-        <button type="submit" class="btn">Search</button>
-        <label for="languages">Languages:</label>
-        <select name="languages" id="languages" class="languages"></select>
-        <label for="sort-by">Sort By:</label>
-        <select name="sort-by" id="sort-by" class="sort-by"></select>
-      </form>
-    </header>
-    <main>
-      <section class="articles"></section>
-    </main>
+    <div class="wrapper">
+      <header>
+        <h1>My News</h1>
+        <form onsubmit="return false">
+          <div>
+            <input type="text" name="search-news" class="search-news" />
+            <button type="submit" class="btn">Search</button>
+          </div>
+          <div>
+            <label for="languages">Languages:</label>
+            <select name="languages" id="languages" class="languages"></select>
+            <label for="sort-by">Sort By:</label>
+            <select name="sort-by" id="sort-by" class="sort-by"></select>
+          </div>
+        </form>
+      </header>
+      <main>
+        <section class="articles"></section>
+      </main>
+    </div>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

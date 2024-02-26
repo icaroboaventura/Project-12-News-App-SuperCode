@@ -32,17 +32,12 @@ const fechtData = () => {
   fetch(`https://newsapi.org/v2/everything?q=${keyword}&language=${selectedLanguageCode}&sortBy=${selectedSortValue}&pageSize=50&apiKey=72ddb9bddd534abea1becf3f48f43f73`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       data.articles.forEach((article) => {
-        console.log(article.title);
-        console.log(article.description);
-        console.log(article.url);
-        console.log(article.urlToImage);
         articlesSection.innerHTML += `
         <article>
         <h2>${article.title}</h2>
         <p>${article.description}</p>
-        <img src="${article.urlToImage}" alt=${article.title}/>
+        <img src="${article.urlToImage}" alt="${article.title}"/>
         <a href="${article.url}"  target="_blank">Read More</a>
         </article>
         `;
